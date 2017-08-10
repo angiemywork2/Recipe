@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>iCalendar JS</title>
+	<script
+	src="http://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous"></script>
+	<link type="text/css" href="assets/CalendarLibrary/jquery.icalendar.css" rel="stylesheet"> 
+	<script type="text/javascript" src="assets/CalendarLibrary/jquery.icalendar.js"></script>
+	</head>
+<body>
+<div id="calendar"> </div>
+<script type="text/javascript">
+	$("#calendar").icalendar({start:
+		new Date(2017,1-1,26,10,30,00),
+		end: new Date(2017,1-1,12,30,00),
+		title: "Test 1",
+		description: "Testing 1, 2, 3",
+		location: "a planet near you"
+	});
+</script>
+</body>
+</html>
