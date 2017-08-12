@@ -34,8 +34,8 @@
         var showTitle = $("#tvShow-input").val();
 
         var key = "40e9cece";
-        var queryURL = "http://api.tvmaze.com/search/shows?q="+showTitle;
-        var queryURLOMDB = "http://www.omdbapi.com/?t="+showTitle+"&y=&plot=short&apikey="+key;
+        var queryURL = "https://api.tvmaze.com/search/shows?q="+showTitle;
+        var queryURLOMDB = "https://www.omdbapi.com/?t="+showTitle+"&y=&plot=short&apikey="+key;
         // http://api.tvmaze.com/search/shows?q=psych
         // http://www.omdbapi.com/?t=psych&y=&plot=short&apikey=40e9cece
 
