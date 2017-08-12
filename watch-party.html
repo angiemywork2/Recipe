@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+	<!DOCTYPE html>
 	<html lang="en-us">
 		<head>
 			<meta charset="UTF-8">
@@ -17,6 +17,8 @@
 			<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 
 			<link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Frijole|Monoton" rel="stylesheet">
+
 
 			<!-- Firebase Reference -->
     		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
@@ -25,7 +27,7 @@
     		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
    			<!-- CSS Reference -->
-  			<link rel="stylesheet" type="text/css" href="assets/style.css">
+  			<link rel="stylesheet" type="text/css" href="style.css">
 		
 			
 		</head>
@@ -42,7 +44,7 @@
 						<h1 class="text-center">The Ultimate Watch Party!</h1>
 		      			<h3 class="text-center">'The Premier Place to Plan Your Watch Parties with Friends'</h3>
 
-		      			<img src="assets/popcorn2.png" alt="Popcorn">
+		      			<img src="popcorn2.png" alt="Popcorn">
 
 		      			<!-- <center><img src="popcorn2.png" alt="Popcorn" style="width:400px"; height:400px;"></center>
 						 -->
@@ -59,22 +61,24 @@
 			<div class="row">
 				<div class="col-md-12">
 				<!-- Insert interesting text here to grab users attention. Why should they use this site to plan watch party and invite friends! -->
-					<h1>It's Friday Night!</h1>
-					<h3> The season premiere of your favorite show was just released. No worries! Check out the show schedule and invite your friends to a virtual watch party! It's simple!
+					<h1 id="friday">It's  Friday  Night!</h1>
+					<h3> The season premiere of your favorite show was just released. No worries!
+					<br>Check out the show schedule and invite your friends to a virtual watch party! 
+					<br>It's simple!
 					</h3>
 				</div>
 			</div>
 			</div>
 
 
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+			<div id="carousel-images" class="carousel slide" data-ride="carousel" data-interval="3000">
 	  <!-- Indicators -->
 					<ol class="carousel-indicators">
-					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+					<li data-target="#carousel-images" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-images" data-slide-to="1"></li>
+					<li data-target="#carousel-images" data-slide-to="2"></li>
+					<li data-target="#carousel-images" data-slide-to="3"></li>
+					<li data-target="#carousel-images" data-slide-to="4"></li>
 	    			</ol>
 
 	  <!-- Wrapper for slides -->
@@ -119,11 +123,11 @@
 	  		</div>
 
 	  <!-- Controls -->
-				  	<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				  	<a class="left carousel-control" href="#carousel-images" role="button" data-slide="prev">
 				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 				    <span class="sr-only">Previous</span>
 				  	</a>
-				  	<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				  	<a class="right carousel-control" href="#carousel-images" role="button" data-slide="next">
 				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 				    <span class="sr-only">Next</span>
 				  	</a>
@@ -137,38 +141,30 @@
 				<!-- Show Search box and submit button -->
 						<!-- <div class="panel panel-primary">
 		     		<div class="panel-heading"> -->
-		     	<!-- Movies will get dumped here -->
-		     	<!--
-    			<div id="tv-show"></div>
-    				<form id="tv-form">
-      					<label for="tvShow-input">Add A TV Show</label>
-      					<input type="text" id="tvShow-input"><br><br>
-      			-->		
-
-      				<!-- This button will trigger our AJAX call -->
-      				<!--
-      					<input id="find-tvShow" type="submit" value="TV Show Search">
-    				</form>
-    				-->
-
 			
 		    	<div class="form-group">
-          			<label for="show-name-input" class="col-sm-4" control-label"><strong>What Show Are You Looking For?</strong></label> 
+					
+          			<label for="show-name-input" class="col-md-offset-3 col-md-6 col-md-offset-3" control-label">Add Show</label> 
           			<br>
-          			<div class="col-sm-4 control-label">
-          			<h4 class="submit-title"><strong>Add Show</strong></h4>
-          			<input class="form-control" id="tvShow-input" type="text" textarea placeholder= "What show are you looking for?"> 
+          			<div class="col-md-offset-3 col-md-6 col-md-offset-3">
+          			<!-- h4 class="submit-title"><strong>Add Show</strong></h4> -->
+          			<input class="form-control"  id="tvShow-input" type="text" textarea placeholder= "What show are you looking for?"> 
 				</div>
         	
         		<br>
 		    </div>
-		    </form>    
+		   <!--  </form>  -->  
+
 	      	<div class="row">
-		     		<button class="btn btn-primary" id="find-tvShow" type="submit" >Submit</button>
+	      		<div class="col-md-offset-3 col-md-6 col-md-offset-3">
+		     		<center><button class="btn btn-primary" id="find-tvShow" type="submit" >Submit</button></center>
+		     	</div>
 	     	</div>
 	     	<br>
 			     	
 		   
+
+
 		<!-- Table that will populate show name, plot, show times, ratings to compare-->
 			<div class="container">
 				<div class="row">
@@ -199,20 +195,27 @@
 			        </table>
 			    </div>
 			    </div>
+
 		<!-- Google Calendar to schedule watch parties and invite friends -->
+
+
 		<!-- Add Facebook and Twitter Links to LiveChat with Friends during the show -->
 			<script>
 				$('.carousel').carousel({
 				interval: 2000
+
 			});
 			
 			</script>
-	<!-- JavaScript -->
-    <script src="./assets/tvshows.js"></script>
-    
+
+
+	<!-- JavaScript	
+    <script src="./assets/javascript/schedule.js"></script>
+     -->
 			</div>
 	
 			<br>
+
 			<div class="container">
 				<div class="row">
 					<div class="calendar">
@@ -220,7 +223,10 @@
 					</div>
 				</div>
 			</div>
-			<footer>Copyright &copy; Angie - Eliseo - Teneah - Dawn</footer>
+
+			<footer>Copyright &copy; Angie - Eliseo - Taneah - Dawn</footer>
+
 		
+
 		</body>
 		</html>

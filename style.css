@@ -1,6 +1,11 @@
 
 body{
 	background: linear-gradient(to bottom, #000000 2%, #000066 100%);
+
+	margin-left: 20px;
+	margin-right: 20px;
+
+
 }
 
 
@@ -11,12 +16,36 @@ body{
 	color: #cc0000;
 }
 
+
+#friday {
+	font-family: 'Monoton', cursive;
+}
+#about {	
+	color: #f2f2f2;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
 .right.carousel-control, 
 .left.carousel-control 
 {
      visibility:hidden;
 }
 
+h1 {
+	color: #f2f2f2;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+}
+
+.form-group  {
+	font-size: 20px;
+	color: #f2f2f2;
+	text-align: center;
+	padding-bottom: 40px;
+}
 
 hr {
 	display: block;
@@ -37,6 +66,8 @@ hr {
     overflow: hidden;
     font-family: 'Acme', sans-serif;
     color: red;
+
+    text-shadow:-1px 0 #00ffff, 0 1px #00ffff, 1px 0 #00ffff, 0 -1px #00ffff;
 }
 
 .jumbotron img {
@@ -76,7 +107,6 @@ hr {
 	font-family: calibri;
 }
 
-
 .table thead tr th {
 	background-color: #000066;
 	border: none;
@@ -103,7 +133,11 @@ hr {
 	width: 150px;
 	font-size: 1.4em;
 	margin: 0px 0px 50px 0px;
+
+	border:none;	
+
 	border:none;
+
 	
 }
 
