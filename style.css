@@ -4,10 +4,12 @@
 
 body{
 	background: linear-gradient(to bottom, #000000 2%, #000066 100%);
+
 	margin-left: 20px;
 	margin-right: 20px;
 
 }
+
 
 .carousel-caption {
 	top: 0;
@@ -19,9 +21,11 @@ body{
 
 #friday {
 	font-family: 'Monoton', cursive;
-	color: yellow;
+
+color: yellow;
 	font-size: 50px;
 }
+
 
 #about {	
 	color: #f2f2f2;
@@ -69,6 +73,7 @@ hr {
     background-size: cover;
     overflow: hidden;
     font-family: 'Acme', sans-serif;
+
     text-shadow:-1px 0 #00ffff, 0 1px #00ffff, 1px 0 #00ffff, 0 -1px #00ffff;
 }
 
@@ -81,6 +86,11 @@ hr {
 	font-family: 'Acme', sans-serif;
 	font-size: 40px;
     color: red;
+
+   
+
+    text-shadow:-1px 0 #00ffff, 0 1px #00ffff, 1px 0 #00ffff, 0 -1px #00ffff;
+
 }
 
 .jumbotron img {
@@ -120,10 +130,12 @@ hr {
 	font-family: calibri;
 }
 
+
 .table {
 	width: 100%;
 	border-collapse: collapse;
 }
+
 
 .table thead tr th {
 	background-color: #000066;
@@ -142,7 +154,9 @@ hr {
 	font-size: 18px;
 	font-family: 'Open Sans', sans-serif;
 	color: black;
+
 	white-space: pre-line;
+
 }
 
 .btn-primary {
@@ -152,6 +166,7 @@ hr {
 	width: 150px;
 	font-size: 1.4em;
 	margin: 0px 0px 50px 0px;
+
 	border:none;	
 }
 
@@ -170,7 +185,18 @@ hr {
 	font-family: 'Acme', sans-serif;
 	color: black;
 	text-align: center;
+
+
+	border:none;	
+
+	
+
+	
 }
+
+
+
+
 
 .calendar{
 	background-color: white;
@@ -186,6 +212,7 @@ footer {
 	background-color: black;
 	clear: left;
 	text-align: center;
+
 }
 
 .fa {
@@ -227,5 +254,6 @@ footer {
   background: #bb0000;
   color: white;
 }
+
 
 
