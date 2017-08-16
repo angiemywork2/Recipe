@@ -1,25 +1,366 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head>
-	<meta charset="utf-8">
-	<title>iCalendar JS</title>
-	<script
-	src="http://code.jquery.com/jquery-3.2.1.js"
-	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-	crossorigin="anonymous"></script>
-	<link type="text/css" href="assets/CalendarLibrary/jquery.icalendar.css" rel="stylesheet"> 
-	<script type="text/javascript" src="assets/CalendarLibrary/jquery.icalendar.js"></script>
-	</head>
-<body>
-<div id="calendar"> </div>
-<script type="text/javascript">
-	$("#calendar").icalendar({start:
-		new Date(2017,1-1,26,10,30,00),
-		end: new Date(2017,1-1,12,30,00),
-		title: "Test 1",
-		description: "Testing 1, 2, 3",
-		location: "a planet near you"
-	});
-</script>
-</body>
-</html>
+	<html lang="en-us">
+		<head>
+			<meta charset="UTF-8">
+			<title>Watch Party</title>
+			
+			<!-- Bootstrap Link -->
+		
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+			<!-- Google Fonts -->
+			<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+
+			<link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+
+			<!-- Firebase Reference -->
+    		<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+    		<!-- Moment.js Reference -->
+    		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+   			<!-- CSS Reference -->
+  			<link rel="stylesheet" type="text/css" href="style.css">
+
+  			<!-- jQuery reference -->
+			<script
+			src="http://code.jquery.com/jquery-3.2.1.js"
+			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			crossorigin="anonymous"></script>
+			<!-- jQuery Calendar library -->
+			<link type="text/css" href="assets/CalendarLibrary/jquery.icalendar.css" rel="stylesheet"> 
+
+			<!-- jquery Calendar CSS -->
+			<script type="text/javascript" src="assets/CalendarLibrary/jquery.icalendar.js"></script>
+		</head>
+		
+		<body>
+		<!-- Jumbotron for the Title: Watch Party App -->
+			
+			<div id="container">
+				<!-- Jumbotron: "Train Schedule" Title -->
+				<div class="row">
+					<div class="jumbotron">
+						
+
+						<h1 class="text-center">The Ultimate Watch Party!</h1>
+		      			<h3 class="text-center">'The Premier Place to Plan Your Watch Parties with Friends'</h3>
+
+		      			<img src="popcorn2.png" alt="Popcorn">
+
+		      			<!-- <center><img src="popcorn2.png" alt="Popcorn" style="width:400px"; height:400px;"></center>
+						 -->
+		    		</div>
+		    	</div>
+
+		    	<hr>
+			</div>
+
+			
+				
+		<!-- Description of service app provides in a text box panel (like HW bio) Binge watch your fav shows with your friends! -->
+			<div id="about">
+			<div class="row">
+				<div class="col-md-12">
+				<!-- Insert interesting text here to grab users attention. Why should they use this site to plan watch party and invite friends! -->
+					<h1>It's Friday Night!</h1>
+					<h3> The season premiere of your favorite show was just released. No worries! Check out the show schedule and invite your friends to a virtual watch party! It's simple!
+					</h3>
+				</div>
+			</div>
+			</div>
+
+
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+	  <!-- Indicators -->
+					<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+	    			</ol>
+
+	  <!-- Wrapper for slides -->
+			<div class="container">
+				<div class="carousel-inner" role="listbox">
+				    <div class="item active">
+				    	<center><img src="http://www.thewareaglereader.com/wp-content/uploads/2015/05/Chuck_TV_Series-443416459-large-1.jpg" alt="Chuck" style="width:100%;height:450px;"></center>
+				    <div class="carousel-caption">
+				        Search for your favorite show!
+				    </div>
+					</div>
+				    
+				    <div class="item">
+				    	<center><img src="https://img.netnaija.com/3Y6HHK.jpg" style="width:100%;height:450px;"></center>
+				      
+				    <div class="carousel-caption">
+				       	Send out an evite to your friends!
+				    </div>
+					</div>
+	   
+			   		<div class="item">
+			      		<center><img src="http://blog.mrcostumes.com/wp-content/uploads/Game-of-Thrones-Costumes-Banner.jpg" alt="Game-of-Thrones" style="width:100%;height:450px;"></center>
+			      
+			      	<div class="carousel-caption">
+			       		Everyone watch the show together virtually!   
+			      	</div>
+			    	</div>
+	  
+	  
+
+	  				<div class="item">
+	      				<center><img src="https://cdn1.edgedatg.com/aws/v2/abc/TheBachelorette/showimages/ade186cbd1d66e103c6a17e0f589dfe2/1200x627-Q80_ade186cbd1d66e103c6a17e0f589dfe2.jpg" alt="TheBachelorette" style="width:100%;height:450px;"></center>
+	      
+	      			<div class="carousel-caption">
+	        		 	Use social media to post comments while you watch!
+	      			</div>
+	    			</div>
+	   
+	  			</div>
+
+	  		</div>
+	  		</div>
+
+	  <!-- Controls -->
+				  	<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  	</a>
+				  	<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  	</a>
+	
+
+					<h1>#ItsAWatchPartyWeekend!</h1>
+
+							
+
+					<!-- <div class="col-md-3">	 -->		
+				<!-- Show Search box and submit button -->
+						<!-- <div class="panel panel-primary">
+		     		<div class="panel-heading"> -->
+			
+		    	<div class="form-group">
+          			<label for="show-name-input" class="col-sm-4" control-label"><strong>What Show Are You Looking For?</strong></label> 
+          			<br>
+          			<div class="col-sm-4 control-label">
+          			<h4 class="submit-title"><strong>Add Show</strong></h4>
+          			<input class="form-control" id="show-name-input" type="text" textarea placeholder= "What show are you looking for?"> 
+				</div>
+        	
+        		<br>
+		    </div>
+		    </form>    
+	      	<div class="row">
+		     		<button class="btn btn-primary" id="add-show-btn" type="submit" >Submit</button>
+	     	</div>
+	     	<br>
+			     	
+		   
+
+
+		<!-- Table that will populate show name, plot, show times, ratings to compare-->
+			<div class="container">
+				<div class="row">
+					<div class="panel panel-primary">
+		    			<div class="panel-heading">
+		     				<h3 class="panel-title"><strong>SHOWTIMES</strong></h3>
+		      			</div>
+		      		</div>
+		    
+		    	<div class="panel-body">
+		     		<table class="table table-hover" id="show-table">
+		         	<thead>
+		            <tr>
+		            	<th width="20%" height="50px">SHOW TITLE</th>
+		            	<th width="50%" height="50px">PLOT</th>
+		            	<th width="10%" height="50px" style="text-align: center;">NETWORK</th>
+		            	<th width="10%" height="50px" style="text-align: center;">TIME</th>
+		             	<th width="10%" height="50px" style="text-align: center;">RATINGS</th>
+		             </tr>
+		        	</thead>
+		        	<tbody class="table body">
+		         	<tr>
+						<td width="20%">Chuck</td>
+						<td width="50%">Computer geek Chuck Bartowski opens an e-mail that has been encoded, subliminally, with vital government secrets, triggering a massive download of critical information to his brain. With assassins and international terrorists eager to nab Chuck's noggin, it falls to Maj. John Casey and his partner, CIA agent Sarah Walker, to protect the government's newest and most-unlikely secret agent.</td>
+						<td width="10%" align="center">NBC</td>
+						<td width="10%" align="center">09:00</td>
+						<td width="10%" align="center">92%</td>
+					</tr> 
+					<tr>
+						<td width="20%">Grey's Anatomy</td>
+						<td width="50%"td>The medical drama series focuses on a group of doctors at a hospital in Seattle, including several who began their careers at the facility as interns. One of the doctors and the show's namesake, Meredith Grey, is the daughter of a famous surgeon. She struggles to maintain relationships with her colleagues, particularly the hospital's one-time chief of surgery, Richard Webber, due to a pre-existing relationship between them -- Webber and Meredith's mother had a personal relationship when Meredith was young.</td>
+						<td width="10%" align="center">ABC</td>
+						<td width="10%" align="center">09:00</td>
+						<td width="10%" align="center">95%</td>
+					</tr>
+					</tbody>
+			        </table>
+			    </div>
+			    </div>
+
+		<!-- Google Calendar to schedule watch parties and invite friends -->
+
+
+		<!-- Add Facebook and Twitter Links to LiveChat with Friends during the show -->
+			<script>
+				$('.carousel').carousel({
+				interval: 2000
+
+			});
+			
+			</script>
+
+
+	<!-- JavaScript	
+    <script src="./assets/javascript/schedule.js"></script>
+     -->
+			</div>
+	
+			<br>
+
+			<div class="container">
+				<div class="row">
+					<div class="calendar">
+					<p>**PLACEHOLDER FOR CALENDAR**</p>
+					</div>
+				</div>
+			</div>
+
+			<footer>Copyright &copy; Angie - Eliseo - Teneah - Dawn</footer>
+
+		<script type="text/javascript">
+
+			var config = {
+
+		    apiKey: "AIzaSyBazdBYpQeMv8fiKWqMHAML593iRvUENNA",
+		    authDomain: "mywatchparty-94719.firebaseapp.com",
+		    databaseURL: "https://mywatchparty-94719.firebaseio.com",
+		    projectId: "mywatchparty-94719",
+		    storageBucket: "mywatchparty-94719.appspot.com",
+		    messagingSenderId: "847390956477"
+		    
+		    };
+
+		    firebase.initializeApp(config);
+
+		    var database = firebase.database();
+
+		    var showTitle = "";
+		    var showRating ="";
+		    var showPlot ="";
+		    var showNetwork = "";
+		    var showDay = "";
+		    var showTime = "";
+		    var showDuration = "";
+		    
+		      // This .on("click") function will trigger the AJAX Call
+		      $("#add-show-btn").on("click", function(event) {
+
+		        // event.preventDefault() can be used to prevent an event's default behavior.
+		        // Here, it prevents the submit button from trying to submit a form when clicked
+		        event.preventDefault();
+
+		        // Here we grab the text from the input box
+		        var showTitle = $("#show-name-input").val();
+
+		        var key = "40e9cece";
+		        var queryURL = "http://api.tvmaze.com/search/shows?q="+showTitle;
+		        var queryURLOMDB = "http://www.omdbapi.com/?t="+showTitle+"&y=&plot=short&apikey="+key;
+		        // http://api.tvmaze.com/search/shows?q=psych
+		        // http://www.omdbapi.com/?t=psych&y=&plot=short&apikey=40e9cece
+
+		        var ajaxResults;
+
+		        $.ajax({
+		            url: queryURL,
+		            method: "GET"
+		        })
+		          // After the data comes back from the API
+		          .then(function(response) {
+
+		              ajaxResults = response;
+
+		              return $.ajax({
+		                url: queryURLOMDB,
+		                method: "GET"
+		              })
+		          }) 
+		          .then(function(response){
+		            //console.log(ajaxResults);
+		            console.log(response);
+
+		            // Storing an array of results in the results variable
+		            var results = ajaxResults.data;
+		            var showTitle = ajaxResults[0].show.name;
+		            console.log("Show: "+showTitle);
+		            var showNetwork = ajaxResults[0].show.network.name;
+		            console.log("Network: " +showNetwork);
+		            var showDay = ajaxResults[0].show.schedule.days;
+		            console.log("Days: " +showDay+ "s");
+		            var showTime = ajaxResults[0].show.schedule.time;
+		            console.log("Time: " +showTime);
+		            var showTime2 = moment(showTime, 'LT').format('LT');
+		            console.log("Time 2: " +showTime2); 
+		            console.log("Time: "+ moment(showTime, 'LT').format('LT'));
+		            var title=response.Title;
+		            console.log("Title: "+title);
+		            var showRating = response.Rated;
+		            console.log("Rated: "+ showRating);
+		            var showPlot = response.Plot;
+		            console.log("Summary: "+ showPlot);
+
+		            //push to the database
+		            database.ref().push({
+		            showTitle:showTitle,
+		            showNetwork: showNetwork,
+		            showDay: showDay,
+		            showTime2: showTime2,
+		            showRating: showRating,
+		            showPlot: showPlot,
+		            dateAdded: firebase.database.ServerValue.TIMESTAMP         
+		            
+		            });
+		          
+		        });
+
+		        //Dynamically adding the events to the html
+		          database.ref().on("child_added", function(snapshot) {
+		          // Store everything into a variable.
+		          var showTitle = snapshot.val().showTitle;
+		          var showPlot = snapshot.val().showPlot;
+		          var showRating =snapshot.val().showRating;
+		          var showNetwork2 = snapshot.val().showNetwork;
+		          var showTime = snapshot.val().showTime2;
+
+		          // Add each train's data into the table
+		          $("#show-table > tbody").append("<tr><td>" + showTitle +"</td><td>" +showPlot + "</td><td>" +showNetwork2+ "</td><td>" +showTime+ "</td><td>" + showRating + "</td></tr>");
+
+
+		          //Adding th Calendar buttons to the html
+		         
+
+		          });
+
+		        });
+
+		       $(".calendar").icalendar({start:
+						new Date(2017,0,26,20,30,00),
+						end: new Date(2017,0,26,22,00,00),
+						title: "Test 1",
+						description: "Testing 1, 2, 3",
+						location: "a planet near you"
+					});
+			
+		</script>
+
+		</body>
+		</html>
+
+
