@@ -21,6 +21,17 @@
     var showDay = "";
     var showTime = "";
     var showDuration = "";
+
+    // day converting array 
+    var showDOW = {
+              Sunday: 0,
+              Monday: 1,
+              Tuesday: 2,
+              Wednesday: 3,
+              Thursday: 4,
+              Friday: 5,
+              Saturday: 6
+            };
     
       // This .on("click") function will trigger the AJAX Call
       $("#find-tvShow").on("click", function(event) {
@@ -143,9 +154,9 @@
 
             var nextEpisodeDay;
 
-            var endOfShowMin = "";
+            var endOfShowMin;
 
-            var endOfShowHr = "";
+            var endOfShowHr;
 
             // function to calculate how long the show will last with commercials included
             function showRuntimeCalc (){
@@ -185,7 +196,7 @@
               $(".calendar").icalendar({start:
                 new Date(currentYear,calendarMonth,nextEpisodeDay,showHourConverted,showMinConverted,00),
                 end: new Date(currentYear,calendarMonth,nextEpisodeDay,endOfShowHr,endOfShowMin,00),
-                title: title,
+                title: showTitle,
                 description: showPlot,
                 location: "a planet near you"
               });
@@ -197,10 +208,15 @@
                 if (currenthour < showHourConverted){
                   console.log("Make schedule for today");
 
+                  showRuntimeCalc ();
+                  
+                  console.log("end of show hour: " + endOfShowHr);
+                  console.log("end of show minutes: " + endOfShowMin);
+
                   $(".calendar").icalendar({start:
                     new Date(currentYear,calendarMonth,currentDayOfMonth,showHourConverted,showMinConverted,00),
                     end: new Date(currentYear,calendarMonth,currentDayOfMonth,endOfShowHr,endOfShowMin,00),
-                    title: title,
+                    title: showTitle,
                     description: showPlot,
                     location: "a planet near you"
                   });
@@ -220,6 +236,11 @@
                 console.log("next Episode day: " + nextEpisodeDay);
 
                 dayOfTheWeek++;
+                if (dayOfTheWeek > 6){
+                  dayOfTheWeek = -1;
+                  dayOfTheWeek++;
+                }
+
                 console.log("current day = " + dayOfTheWeek);
                 
                 if(dayOfTheWeek == showDayConverted){
@@ -232,7 +253,9 @@
               }
             }
             
-          
+          //clear input box
+           $("#tvShow-input").val('');
+
         });
           database.ref().on("child_added", function(snapshot) {
           // Store everything into a variable.
@@ -243,13 +266,14 @@
 
           // Add each tv show's data into the table
           $("#show-table > tbody").append("<tr><td>" + showTitle +"</td><td>" +showRating + "</td><td>" +showPlot+ "</td><td>" +showNetwork2+ "</td><td>" + showTime + "</td></tr>");
-          var showPlot = snapshot.val().showPlot;
-          var showNetwork = snapshot.val().showNetwork;
-          var showDay = snapshot.val().showDay;
-          var showTime2 = snapshot.val().showTime2;
 
-          // Add each train's data into the table
-          $("#show-table > tbody").append("<tr><td>" + showTitle +"</td><td>" +showRating + "</td><td>" +showPlot+"</td><td>" +showNetwork+"</td><td>" +showDay+ "</td><td>"+showTime2+ "</td></tr>");
+          $(".calendar").icalendar({start:
+                new Date(2017,7,16,20,00,00),
+                end: new Date(2017,7,16,22,00,00),
+                title: "Show Title Here",
+                description: "Show Plot Here",
+                location: "A couch near you"
+              });
 
           });
 
