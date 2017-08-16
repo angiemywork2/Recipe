@@ -263,9 +263,11 @@
           var showRating =snapshot.val().showRating;
           var showNetwork2 = snapshot.val().showNetwork;
           var showTime = snapshot.val().showTime2;
+          var showPlot = snapshot.val().showPlot;
+          var showDay = snapshot.val().showDay;
 
           // Add each tv show's data into the table
-          $("#show-table > tbody").append("<tr><td>" + showTitle +"</td><td>" +showRating + "</td><td>" +showPlot+ "</td><td>" +showNetwork2+ "</td><td>" + showTime + "</td></tr>");
+          $("#show-table > tbody").append("<tr><td>" + showTitle +"</td><td>" +showRating + "</td><td>" +showPlot+ "</td><td>" +showNetwork2+ "</td><td>" + showTime + "</td><td>" +showDay+"</td></tr>");
 
           $(".calendar").icalendar({start:
                 new Date(2017,7,16,20,00,00),
